@@ -10,15 +10,28 @@ import "@fontsource/lexend/500.css";
 import "@fontsource/lexend/700.css";
 import { configureStore } from "./redux/store";
 import { Provider } from "react-redux";
+import { ThemeProvider, createTheme } from "@mui/material";
+
+const THEME = createTheme({
+  typography: {
+    fontFamily: `"Lexend", "Helvetica", "Arial", sans-serif`,
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const store = configureStore();
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <ThemeProvider theme={THEME}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

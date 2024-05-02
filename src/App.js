@@ -1,11 +1,12 @@
 import "./App.css";
 import AppLayout from "./layout/AppLayout";
+import SearchJobs from "./views/search-jobs";
 
 function App() {
   return (
     <div>
       <AppLayout>
-        <div>Content</div>
+        <SearchJobs />
       </AppLayout>
     </div>
   );
